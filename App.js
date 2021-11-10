@@ -19,6 +19,10 @@ export default function App() {
       
       initialRouteName="Home"
 
+      barStyle={{
+        backgroundColor: '#005797'
+      }}
+      
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
@@ -39,10 +43,8 @@ export default function App() {
           }
           return <Ionicons name={iconName} size={size} color={color} />;
 
-        },          
-        headerShown: false,
-        tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray',
+        },       
+        tabBarLabel: false
       })}
       
       

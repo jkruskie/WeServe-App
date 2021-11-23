@@ -1,33 +1,34 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View, Image, ScrollView} from "react-native";
+import * as React from 'react';
+import { ScrollView, StyleSheet, Image } from 'react-native';
+
+import EditScreenInfo from '../components/EditScreenInfo';
+import { Text, View } from '../components/Themed';
+import { RootTabScreenProps } from '../types';
 import { Ionicons, SimpleLineIcons } from "@expo/vector-icons";
 
-export default class HomeScreen extends Component {
-    render() {
-      return (
-        <View style={{ flex: 1, alignItems: "center" }}>
+export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
+  return (
+    <View style={{ flex: 1, alignItems: "center" }}>
 
-          {/* Person Header */}
-          <View style={styles.header} >
-          <Text style={styles.helloText}>Hello, Justin</Text>
-          </View>
-          <Image style={styles.headerImg} source={require("../assets/profilepicture.jpg")}/>
-          <Text style={styles.todaysOpps}>Today's opportunities are:</Text>
-          {/* End Person Header */}
+      {/* Person Header */}
+      <View style={styles.header} >
+        <Text style={styles.helloText}>Hello, Justin</Text>
+      </View>
+      <Image style={styles.headerImg} source={require("../assets/images/profilepicture.jpg")}/>
+      <Text style={styles.todaysOpps}>Today's opportunities are:</Text>
+      {/* End Person Header */}
 
-          {/* List of Opportunities */}
-          
-          <ScrollView>
-            { oppList }
-          </ScrollView>
-          
-          {/* End List of Opportunities */}
+      {/* List of Opportunities */}
 
-        </View>
-      )
-    }
-  }
+      <ScrollView>
+        { oppList }
+      </ScrollView>
 
+      {/* End List of Opportunities */}
+
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -231,7 +232,7 @@ let oppList=oppJson.map((item,index)=>{
           <Text style={styles.oppOrganizer}>{ item.organizer.name }</Text>
           <Text style={styles.oppDate}>{ formDates(item) }</Text>
         </View>
-        <View style={styles.column} flex="0">
+        <View style={styles.column} flex={0}>
           <SimpleLineIcons name="arrow-right" size={ 24 } style={ styles.enterArrow }/>
         </View>
       </View>

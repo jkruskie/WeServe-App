@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "WeServe-App",
-    "slug": "WeServe-App",
+    "name": "WeServe",
+    "slug": "WeServe",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -19,9 +19,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.jkruskie.weserveapp",
+      "buildNumber": "1.0.0"
     },
     "android": {
+      "package": "com.jkruskie.weserveapp",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"

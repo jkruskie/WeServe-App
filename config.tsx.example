@@ -1,0 +1,7 @@
+let config = {
+    api: {
+        host: ""
+    }
+}
+
+export default config;
